@@ -17,5 +17,7 @@
     "postcss-import": "^14.0.0",
     "postcss-plugin": "^1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }

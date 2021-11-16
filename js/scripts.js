@@ -100,6 +100,61 @@ $(document).ready(function(){
 			$(this).addClass('active').next('.js-tab-content').slideDown(200);
 		}
 	})
+
+
+    //news-slider-box
+    $('.news-slider-box .slider').slick({
+        dots: false,
+        slidesToShow: 3,
+        variableWidth: false,
+        infinite: true,
+        prevArrow: '<span class="btn-action-ico ico-arrow ico-arrow-prev"></span>',
+        nextArrow: '<span class="btn-action-ico ico-arrow ico-arrow-next"></span>',
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 1,
+                    variableWidth: true,
+                    prevArrow: false,
+                    nextArrow: false,
+                }
+            },
+        ]
+    });
+
+
+    //tiles-slider-box
+    $('.tiles-slider-box .slider').slick({
+        dots: false,
+        slidesToShow: 1,
+        infinite: false,
+        variableWidth: true,
+        slidesToShow: 1,
+        prevArrow: false,
+        nextArrow: false,
+        /*responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    variableWidth: true,
+                    slidesToShow: 1,
+                    prevArrow: false,
+                    nextArrow: false,
+                }
+            },
+        ]*/
+    });
+
+    //info-slider-box
+    $('.info-slider-box .slider').slick({
+        dots: true,
+        slidesToShow: 1,
+        variableWidth: false,
+        prevArrow: false,
+        nextArrow: false,
+    });
+    
 	
 });
 

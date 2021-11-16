@@ -1,9 +1,9 @@
 :root {
-	--clr-base: #000;
-	--clr-att: #f00;
+	--clr-base: #3D424D;
+	--clr-att: #387BB6;
 
-	--min: 320px;
-	--max: 1200px;
+	--min: 375px;
+	--max: 1215px;
 
 	font-size: 10px;
 }
@@ -19,9 +19,19 @@
 body {
 	color: var(--clr-base, #000);
 	background: #fff;
+    font-size: 14px;
+    line-height: 17/14;
+    font-family: 'PT Root UI', sans-serif;
+}
+ul,
+ol {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 p, ul, ol {
 	position: relative;
+    margin-bottom: 17/14em;
 	img {
 		max-width: 100%;
 	}
@@ -56,7 +66,31 @@ h5, .h5-title,
 h6, .h6-title {
 	display: block;
 	position: relative;
+    line-height: 40/36;
+    margin: 1em 0 1em 0;
+    font-weight: bold;
     &:first-child {
         margin-top: 0;
+    }
+}
+.h1-title, h1 {
+    font-size: 36px;
+}
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+@media (max-width: 991px) {
+    .h1-title, h1 {
+        font-size: 32px;
+    }
+}
+@media (max-width: 767px) {
+    .h1-title, h1 {
+        font-size: 30px;
     }
 }

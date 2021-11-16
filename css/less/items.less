@@ -1,6 +1,158 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
+.item-tile {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 1.17;
+    color: var(--clr-base);
+    .tile-ico {
+        display: block;
+        height: 58px;
+        line-height: 1;
+        position: relative;
+        flex-shrink: 0;
+        img {
+            display: block;
+            width: auto;
+            height: 100%;
+        }
+    }
+    .tile-title {
+        display: block;
+        flex: 1;
+        padding: 0 0 0 20px;
+    }
+}
+.elm-menu {
+    display: inline-block;
+    position: relative;
+    height: 35px;
+    border-radius: 2px;
+    line-height: 35px;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 16px 0 44px;
+    font-size: 16px;
+    color: #fff;
+    background: #4289C7;
+    transition: background ease 0.2s;
+    .menu-title {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    &:hover {
+        color: #fff;
+        background: var(--clr-att);
+    }
+    .elm-ico {
+        display: block;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        margin-top: -9px;
+    }
+}
+.item-new {
+    display: block;
+    position: relative;
+    font-size: 16px;
+    line-height: 1.33;
+    color: var(--clr-base);
+    text-decoration: none;
+    transition: color ease 0.2s;
+    &:hover {
+        color: var(--clr-att);
+        .new-text, .new-date {
+            a {
+                color: var(--clr-att);
+            }
+        }
+    }
+    .new-photo-wrap {
+        display: block;
+        position: relative;
+        line-height: 1;
+        margin-bottom: 24px;
+    }
+    .new-info-wrap {
+        display: block;
+        position: relative;
+    }
+    .new-date {
+        display: block;
+        font-size: 14px;
+        line-height: 17/14;
+        font-weight: 400;
+        margin-bottom: 12px;
+        a {
+            display: block;
+            color: var(--clr-base);
+        }
+    }
+    .new-text {
+        display: block;
+        a {
+            display: block;
+            color: var(--clr-base);
+        }
+    }
+    .new-tags {
+        display: flex;
+        margin: 16px -8px 0 0;
+    }
+    .new-photo {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        &:before {
+            content: "";
+            display: block;
+            padding-top: 65.2%;
+        }
+        img:not(.img-bg-cover) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+    .elm-tag {
+        margin: 0 8px 8px 0;
+        display: block;
+    }
+    a {
+        transition: all ease 0.2s;
+    }
+}
+.elm-tag {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    height: 21px;
+    line-height: 21px;
+    padding: 0 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 2px;
+    background: #EEF2FA;
+    font-size: 14px;
+    color: var(--clr-att);
+    text-decoration: none;
+    &:hover {
+        background: #EEF2FA - #111;
+    }
+}
 .item-photo {
     display: block;
     position: relative;
@@ -48,5 +200,36 @@
         margin: auto;
         max-width: 100%;
         max-height: 100%;
+    }
+}
+.elm-overlay {
+    display: none;
+    animation: fadein ease 0.2s;
+    background: fade(#000, 80);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 120;
+    &.active {
+        display: block;
+    }
+}
+@media (min-width: 992px) {
+    .item-new {
+        font-size: 18px;
+        .new-photo {
+            &:before {
+                padding-top: 59%;
+            }
+        }
+        .new-date {
+            font-size: 16px;
+            line-height: 19/16;
+        }
+        .new-tags {
+            margin-top: 26px;
+        }
     }
 }
