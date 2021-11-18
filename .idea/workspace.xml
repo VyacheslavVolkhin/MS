@@ -43,7 +43,7 @@
     <setting file="file://$PROJECT_DIR$/js/scripts.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/css/less/items.less" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/css/less/forms.less" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/_html/main.html" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/_html/01-main.html" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/css/less/main.less" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JsBowerSettings">
@@ -61,8 +61,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Angular2Html&#10;LESS" />
+    <property name="com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File" value="SVG" />
     <property name="js.buildTools.grunt.grunt-cli.package" value="/usr/local/lib/node_modules/grunt-cli" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/_html" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
@@ -81,6 +82,7 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/_html" />
+      <recent name="$PROJECT_DIR$/img/icons/" />
       <recent name="$PROJECT_DIR$/_includes" />
       <recent name="$PROJECT_DIR$/css/less" />
     </key>

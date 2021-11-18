@@ -1,6 +1,8 @@
 :root {
 	--clr-base: #3D424D;
 	--clr-att: #387BB6;
+    --clr-att-second: #4289c7;
+    --clr-bg: #EEF2FA;
 
 	--min: 375px;
 	--max: 1215px;
@@ -32,6 +34,7 @@ ol {
 p, ul, ol {
 	position: relative;
     margin-bottom: 17/14em;
+    margin-top: 0;
 	img {
 		max-width: 100%;
 	}
@@ -46,6 +49,7 @@ li {
 a {
 	text-decoration: none;
 	color: var(--clr-att, #f00);
+    transition: all ease 0.2s;
 	&:hover {
 		text-decoration: none;
 		color: var(--clr-att, #f00);
@@ -63,7 +67,8 @@ h2, .h2-title,
 h3, .h3-title,
 h4, .h4-title,
 h5, .h5-title,
-h6, .h6-title {
+h6, .h6-title,
+.side-title {
 	display: block;
 	position: relative;
     line-height: 40/36;
@@ -73,8 +78,39 @@ h6, .h6-title {
         margin-top: 0;
     }
 }
+.side-title {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 24/20;
+    color: var(--clr-base);
+    padding: 18px 15px;
+    background: var(--clr-bg);
+}
 .h1-title, h1 {
     font-size: 36px;
+    margin-bottom: 0.7em;
+    &.title-small {
+        font-size: 28px;
+        line-height: 34/28;
+        margin-bottom: 62/28em;
+    }
+}
+.h2-title, h2 {
+    font-size: 27px;
+    line-height: 1.33;
+}
+.h3-title, h3 {
+    font-size: 20px;
+    line-height: 1.33;
+    &.title-small {
+        font-size: 18px;
+    }
+}
+.h4-title, h4 {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 24/18em;
 }
 *,
 *:after,
@@ -84,13 +120,139 @@ h6, .h6-title {
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
 }
+.text-att {
+    color: var(--clr-att);
+}
+.text-lead {
+    font-size: 24/18em;
+}
+ol {
+    list-style-position: inside;
+    list-style-type: decimal;
+    li {
+    	position: relative;
+        padding-left: 5px;
+    }
+}
+.ul-list, .ul-arrows, .ol-numbers {
+    &.list-sep {
+        li {
+            margin-bottom: 22/14em;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+.ul-list {
+    li {
+        padding-left: 0;
+        &:before {
+            content: "";
+            display: inline-block;
+            width: 3/13em;
+            height: 3/13em;
+            border-radius: 50%;
+            background: var(--clr-base);
+            margin: 0 4/13em 0 0;
+            position: relative;
+            top: -4/13em;
+            left: auto;
+        }
+    }
+    &.ul-att {
+        li {
+            &:before {
+                background: var(--clr-att);
+            }
+        }
+    }
+}
+.ul-arrows {
+    li {
+        padding-left: 27/18em;
+        &:before {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            top: 9/15em;
+            left: 0;
+            margin-top: -6px;
+            background: url(../img/icons/arrow02.svg) center no-repeat;
+            background-size: 100% auto;
+            filter: brightness(0);
+        }
+    }
+    &.ul-att {
+        li {
+            &:before {
+                filter: brightness(1);
+            }
+        }
+    }
+}
+.ol-numbers {
+    counter-reset: li;
+    list-style: none;
+    li {
+    	position: relative;
+        padding-left: 37/18em;
+    	&:before {
+    		content: '0' counter(li);
+            counter-increment: li;
+            font-size: 22/18em;
+            font-weight: bold;
+            color: var(--clr-att);
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-top: -0.1em;
+    	}
+    }
+}
+.ul-att {
+    color: var(--clr-att);
+}
 @media (max-width: 991px) {
     .h1-title, h1 {
         font-size: 32px;
+        &.title-small {
+            font-size: 24px;
+        }
+    }
+    .h2-title, h2 {
+        font-size: 22px;
     }
 }
 @media (max-width: 767px) {
     .h1-title, h1 {
         font-size: 30px;
+        &.title-small {
+            font-size: 20px;
+        }
+    }
+    .h2-title, h2 {
+        font-size: 20px;
+    }
+    .h3-title, h3 {
+        font-size: 16px;
+        &.title-small {
+            font-size: 16px;
+        }
+    }
+    .side-title {
+        font-size: 16px;
+    }
+}
+@media (min-width: 992px) {
+    body {
+        font-size: 16px;
+    }
+}
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px;
     }
 }
