@@ -106,6 +106,25 @@ $(document).ready(function() {
     })
 
 
+    //datepicker
+    $('.js-datepicker').datepicker({
+        dateFormat: 'dd.mm.yy',
+        dayNames: ["Воскресение", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+        dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+        firstDay: 1
+    });
+
+
+    //item-video
+    $('.js-btn-video').on('click', function () {
+        let videoURL = $(this).parent('.item-video').attr('data-video');
+        $(this).parents('.item-video').addClass('active');
+        $(this).parents('.item-video').append('<iframe width="100%" height="100%" src="' + videoURL + '" frameborder="0" allowfullscreen></iframe>')
+        return false;
+    })
+
+
     //file input 
     $('.js-field-file .js-file-button').on('click', function () {
         $(this).parent().find('input').click();

@@ -94,10 +94,16 @@ h6, .h6-title,
         line-height: 34/28;
         margin-bottom: 62/28em;
     }
+    &.title-medium {
+        font-size: 32px;
+    }
 }
 .h2-title, h2 {
     font-size: 27px;
     line-height: 1.33;
+    &.title-small {
+        font-size: 24px;
+    }
 }
 .h3-title, h3 {
     font-size: 20px;
@@ -112,6 +118,9 @@ h6, .h6-title,
     margin-top: 0;
     margin-bottom: 24/18em;
 }
+.title-dark {
+    color: #000;
+}
 *,
 *:after,
 *:before {
@@ -119,6 +128,7 @@ h6, .h6-title,
     box-sizing: border-box;
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
+    font-family: 'PT Root UI', sans-serif;
 }
 .text-att {
     color: var(--clr-att);
@@ -143,6 +153,11 @@ ol {
             }
         }
     }
+    &.no-sep {
+        li {
+            margin-bottom: 0;
+        }
+    }
 }
 .ul-list {
     li {
@@ -150,13 +165,14 @@ ol {
         &:before {
             content: "";
             display: inline-block;
-            width: 3/13em;
-            height: 3/13em;
+            vertical-align: middle;
+            width: 4px;
+            height: 4px;
             border-radius: 50%;
             background: var(--clr-base);
             margin: 0 4/13em 0 0;
             position: relative;
-            top: -4/13em;
+            top: -2/20em;
             left: auto;
         }
     }
@@ -221,20 +237,29 @@ ol {
         &.title-small {
             font-size: 24px;
         }
+        &.title-medium {
+            font-size: 24px;
+        }
     }
     .h2-title, h2 {
         font-size: 22px;
+        &.title-small {
+            font-size: 22px;
+        }
     }
 }
 @media (max-width: 767px) {
     .h1-title, h1 {
         font-size: 30px;
-        &.title-small {
+        &.title-small, &.title-medium {
             font-size: 20px;
         }
     }
     .h2-title, h2 {
         font-size: 20px;
+        &.title-small {
+            font-size: 20px;
+        }
     }
     .h3-title, h3 {
         font-size: 16px;

@@ -1,6 +1,199 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
+.item-team-contacts {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    .team-photo-wrap {
+        width: 240px;
+        line-height: 1;
+        flex-shrink: 0;
+    }
+    .team-info-wrap {
+        flex: 1;
+        padding: 28px 0 0 50px;
+        max-width: calc(100% - 240px);
+        &:first-child {
+            padding-left: 0;
+        }
+    }
+    .item-cnt {
+        margin-bottom: 1.2em;
+        min-height: 3.5em;
+        &:first-child {
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .item-photo {
+        background: var(--clr-bg);
+        border-radius: 2px;
+        &:before {
+            padding-top: 133%;
+        }
+    }
+}
+.elm-date {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 0 0 0 32px;
+    &:before {
+        content: "";
+        display: block;
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../img/icons/date.svg) center no-repeat;
+        background-size: 100% auto;
+    }
+}
+.item-gallery {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    line-height: 28/21;
+    font-size: 21/18em;
+    &:hover {
+        .gal-title {
+            color: var(--clr-att);
+            a {
+                color: var(--clr-att);
+            }
+        }
+    }
+    .gal-info-wrap {
+        display: block;
+        padding: 13px 0 0 0;
+    }
+    .gal-photos-wrap {
+        margin: 0 -12px 0 0;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        line-height: 1;
+    }
+    .gal-photo-wrap {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        padding: 0 12px 12px 0;
+        width: 33.33%;
+        float: left;
+        &.photo-main {
+            width: 66.66%;
+            .gal-photo {
+                height: 192px;
+            }
+        }
+    }
+    .gal-title {
+        display: block;
+        a {
+            display: block;
+            color: var(--clr-base);
+        }
+    }
+    .gal-photo {
+        display: block;
+        width: 100%;
+        height: 90px;
+        position: relative;
+        overflow: hidden;
+    }
+    .gal-tags {
+        margin: 24px -8px -8px 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .elm-tag, .btn {
+        margin: 0 8px 8px 0;
+    }
+}
+.elm-info {
+    background: var(--clr-bg);
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    display: block;
+    position: relative;
+}
+.item-list {
+    .btn-list {
+        display: flex;
+        align-items: center;
+        min-height: 66/16em;
+        font-size: 16/18em;
+        line-height: 20px;
+        color: var(--clr-base);
+        padding: 13/16em 60/16em 13/16em 20/16em;
+        position: relative;
+        background: var(--clr-bg);
+        text-align: left;
+        border-radius: 2px;
+        &:hover, &.active {
+            background: #DCE4F4;
+            color: var(--clr-base);
+        }
+        &.active {
+            &:before {
+                .t-rotate(180deg);
+            }
+            border-radius: 2px 2px 0 0;
+        }
+        &:before {
+            content: "";
+            display: block;
+            width: 1em;
+            height: 1em;
+            position: absolute;
+            top: 50%;
+            right: 27/16em;
+            margin: -0.5em -0.5em 0 0;
+            transition: transform ease 0.2s;
+            background: url(../img/icons/arrow04.svg) center no-repeat;
+            background-size: 100% auto;
+        }
+    }
+    .list-content-block {
+        display: none;
+        border-radius: 0 0 2px 2px;
+        background: var(--clr-bg);
+        padding: 32px 20px 20px 20px;
+        font-size: 13px;
+        line-height: 1.33;
+    }
+    .items-wrap {
+        margin: 0 -28px;
+    }
+    .item-wrap {
+        width: 33.33%;
+        margin-bottom: 6px;
+        padding: 0 8px;
+        max-width: 280px;
+    }
+    p {
+        margin: 0;
+        &+p {
+            margin-top: 18px;
+        }
+    }
+    .h3-title {
+        font-size: 1em;
+        margin-bottom: 18px;
+        margin-top: 18px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}
 .item-interview {
     display: flex;
     align-items: center;
@@ -89,8 +282,21 @@
         font-weight: bold;
         margin: 0 0 0.4em 0;
     }
+    .cnt-info {
+        display: block;
+        font-size: 14px;
+        line-height: 17/14;
+    }
     .cnt-text {
         display: block;
+    }
+    a[href^="tel"],
+    a[href^="mailto"] {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
     }
     a[href^="tel"] {
         color: var(--clr-base);
@@ -554,12 +760,78 @@
             width: 100%;
         }
     }
+    .item-video {
+        &:before {
+            padding-bottom: 65.2%;
+        }
+    }
     .elm-tag {
         margin: 0 8px 8px 0;
         display: block;
     }
     a {
         transition: all ease 0.2s;
+    }
+}
+.item-video {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    line-height: 1;
+    height: 100%;
+    &:before {
+        content: "";
+        display: block;
+        padding-bottom: 72.3%;
+    }
+    iframe,
+    object,
+    embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .video-bg {
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 3;
+    }
+    .btn-action-ico {
+        display: block;
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+        z-index: 4;
+        margin: auto;
+        width: 60px;
+        height: 60px;
+    }
+    &:after {
+        content: "";
+        display: block;
+        z-index: 2;
+        position: absolute;
+        top: 0;bottom: 0;left: 0;right: 0;
+    }
+    &.active {
+        .video-bg, img, .btn-action-ico, &:after {
+            display: none;
+        }
+    }
+}
+.bg-box {
+    .elm-tag {
+        background: #fff;
+        color: var(--clr-att);
+        &:hover {
+            background: var(--clr-att);
+            color: #fff;
+        }
     }
 }
 .elm-tag {
@@ -578,8 +850,9 @@
     font-size: 14px;
     color: var(--clr-att);
     text-decoration: none;
-    &:hover {
-        background: #EEF2FA - #111;
+    &:hover, &.active {
+        background: var(--clr-att);
+        color: #fff;
     }
 }
 .item-photo {
@@ -754,6 +1027,25 @@
 .elm-scale[data-scale="99"] {width: 99*20px;}
 .elm-scale[data-scale="100"] {width: 100*20px;}
 @media (max-width: 1199px) {
+    .item-team-contacts {
+        .team-info-wrap {
+            padding-left: 24px;
+            padding-top: 15px;
+            max-width: calc(100% - 200px);
+        }
+        .team-photo-wrap {
+            width: 200px;
+        }
+        .item-cnt {
+            margin-bottom: 1em;
+        }
+    }
+    .item-list {
+        .item-wrap {
+            width: 50%;
+            max-width: inherit;
+        }
+    }
     .item-tile {
         .tile-info-wrap {
             column-gap: 24px;
@@ -761,9 +1053,22 @@
     }
 }
 @media (max-width: 991px) {
-    
+    .elm-info {
+        font-size: 14px;
+    }
+    .item-list {
+        .btn-list {
+            padding-left: 20px;
+            font-size: 14px;
+        }
+    }
 }
 @media (max-width: 767px) {
+    .item-list {
+        .item-wrap {
+            width: 100%;
+        }
+    }
     .item-interview {
         display: block;
         .int-title {
@@ -774,6 +1079,33 @@
     .item-activity {
         .act-title {
             padding-left: 15px;
+        }
+    }
+}
+@media (max-width: 575px) {
+    .item-team-contacts {
+        display: block;
+        .team-photo-wrap {
+            width: 100%;
+        }
+        .team-info-wrap {
+            padding: 24px 0 0 0;
+            width: 100%;
+            max-width: inherit;
+        }
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .item-gallery {
+        .gal-photo {
+            height: 120px;
+        }
+        .gal-photo-wrap {
+            &.photo-main {
+                .gal-photo {
+                    height: 252px;
+                }
+            }
         }
     }
 }
@@ -811,6 +1143,11 @@
         .new-photo {
             &:before {
                 padding-top: 59%;
+            }
+        }
+        .item-video {
+            &:before {
+                padding-bottom: 59%;
             }
         }
         .new-date {
