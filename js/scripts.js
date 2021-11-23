@@ -447,7 +447,7 @@ $(document).ready(function() {
         $("#timer").countdown("2022/01/01", function(event) {
             $(this).html(
                 event.strftime(''
-                    + '<span class="timer-count-wrap"><span>%D</span>Дней%!d</span> '
+                    + '<span class="timer-count-wrap"><span>%D</span>Дней</span> '
                     + '<span class="timer-count-wrap"><span>%H</span> Часов </span>'
                     + '<span class="timer-count-wrap"><span>%M</span> Минут </span>'
                     + '<span class="timer-count-wrap"><span>%S</span> Секунд </span>')

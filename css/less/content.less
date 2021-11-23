@@ -360,6 +360,9 @@
             margin: 0;
         }
     }
+    li {
+        margin-bottom: 24px;
+    }
 }
 .mass-media-box {
     margin-bottom: 100px;
@@ -1302,6 +1305,8 @@
         max-width: 390/15em;
         &.info-large {
             max-width: 592/15em;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
         &.info-left {
             margin: 0;
@@ -1604,6 +1609,13 @@
 .lead-box {
     margin-bottom: 48px;
     line-height: 32/24;
+    &.lead-small {
+        font-size: 14px;
+        line-height: 19/14;
+        p, .h3-title, ul {
+            margin-bottom: 36/24em;
+        }
+    }
     p, .h3-title, ul {
         margin-bottom: 32/24em;
     }
@@ -2819,6 +2831,10 @@
                     &:hover {
                         &:before {
                             background: #fff;
+                            opacity: 0.5;
+                        }
+                        &:after {
+                            opacity: 0.5;
                         }
                     }
                 }
@@ -3075,6 +3091,14 @@
         }
         .pagenav-box, .more-wrap {
             margin-top: -45px;
+        }
+    }
+    .side-wrap {
+        .news-box, .gallery-box {
+            .more-wrap {
+                padding-bottom: 0;
+                margin-top: 0;
+            }
         }
     }
     .gallery-box {

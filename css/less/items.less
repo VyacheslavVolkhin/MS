@@ -215,6 +215,7 @@
         height: 90px;
         position: relative;
         overflow: hidden;
+        border-radius: 2px;
     }
     .gal-tags {
         margin: 24px -8px -8px 0;
@@ -451,6 +452,7 @@
     align-items: center;
     width: 100%;
     margin: 0 auto;
+    border-radius: 2px;
     &.info-small {
         padding-right: 20px;
         padding-left: 57/15em;
@@ -551,6 +553,7 @@
     font-size: 13px;
     line-height: 16px;
     min-height: 100%;
+    border-radius: 2px;
     .file-title {
         display: block;
         position: relative;
@@ -703,6 +706,7 @@
     display: flex;
     flex-direction: column;
     padding: 15px 15px 22px 15px;
+    border-radius: 2px;
     .tile-title {
         display: block;
         font-size: 16px;
@@ -796,14 +800,14 @@
     }
     .tile-ico {
         display: block;
-        height: 58px;
+        //height: 58px;
         line-height: 1;
         position: relative;
         flex-shrink: 0;
         img {
             display: block;
-            width: auto;
-            height: 100%;
+            //width: auto;
+            //height: 100%;
         }
     }
     .tile-title {
@@ -915,6 +919,7 @@
         display: block;
         position: relative;
         overflow: hidden;
+        border-radius: 2px;
         &:before {
             content: "";
             display: block;
@@ -1017,6 +1022,18 @@
     font-size: 14px;
     color: var(--clr-att);
     text-decoration: none;
+    &.tag-dark {
+        background: #3D424D;
+        color: #fff;
+        &:hover, &.active {
+            background: #3D424D + #111;
+        }
+    }
+    &.tag-second {
+        color: #3D424D;
+        &:hover, &.active {
+        }
+    }
     &:hover, &.active {
         background: var(--clr-att);
         color: #fff;
