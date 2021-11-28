@@ -302,6 +302,21 @@ html, body {
         }
     }
     .main-menu-wrap {
+        .menu {
+            ul {
+                display: none;
+                font-size: 13px;
+                line-height: 15.5px;
+                margin: 0 auto;
+                max-width: 255px;
+                padding: 10px 0;
+                a {
+                    min-height: 0;
+                    display: block;
+                    padding: 8px 10px 9px 10px;
+                }
+            }
+        }
         .menu-block {
             position: fixed;
             top: 0;
@@ -312,7 +327,7 @@ html, body {
             background: var(--clr-base);
             flex-direction: column;
             overflow: hidden;
-            padding: 140px 0 60px 0;
+            padding: 140px 0 0px 0;
             display: none;
         }
         .menu-content-wrap {
@@ -345,7 +360,7 @@ html, body {
             display: flex;
             align-items: center;
             flex-wrap: wrap;
-            padding: 20px 0 0 0;
+            padding: 20px 0 60px 0;
             justify-content: center;
         }
         .btn-action-ico {
@@ -387,6 +402,9 @@ html, body {
     }
 }
 @media (min-width: 992px) {
+    .header {
+        z-index: 99;
+    }
     .header-top-panel {
         .container {
             justify-content: space-between;
@@ -448,11 +466,39 @@ html, body {
             font-weight: 400;
             flex-wrap: wrap;
             position: relative;
+            ul {
+                display: none;
+                animation: fadein ease 0.2s;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                z-index: 20;
+                background: var(--clr-base);
+                width: 340px;
+                padding: 15px 0;
+                margin-left: -170px;
+                a {
+                    display: block;
+                    color: #fff;
+                    padding: 10px 14px;
+                    font-size: 13px;
+                    line-height: 16px;
+                    &:hover, &.active {
+                        background: #3D424D+#222;
+                    }
+                }
+            }
             &>li {
+                position: relative;
+                &:hover {
+                    &>ul {
+                        display: block;
+                    }
+                }
                 &>a {
                     display: block;
                     position: relative;
-                    padding: 0 14px;
+                    padding: 10px 14px;
                     color: var(--clr-base);
                     &:hover, &.active {
                         color: #000;
@@ -606,6 +652,20 @@ html, body {
                 &:first-child {
                     li {
                         margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 992px) and (max-width: 1399px) {
+    .main-menu-wrap {
+        .menu {
+            &>li {
+                &:last-child {
+                    ul {
+                        left: auto;
+                        right: 0;
                     }
                 }
             }

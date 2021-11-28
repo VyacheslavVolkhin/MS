@@ -106,6 +106,25 @@ $(document).ready(function() {
     })
 
 
+    //mobile menu
+    $('.main-menu-wrap li ul').each(function () {
+        $(this).parent().addClass('submenu');
+    })
+    $('.main-menu-wrap li a').on('click', function () {
+        if ($(this).next('ul').length > 0) {
+            if ($(window).innerWidth() < 1024) {
+                if ($(this).parent().hasClass('open')) {
+                    $(this).parent().removeClass('open').children('ul').slideUp(200);
+                } else {
+                    $('.main-menu-wrap li.open').removeClass('open').children('ul').slideUp(200);
+                    $(this).parent().addClass('open').children('ul').slideDown(200);
+                }
+                return false;
+            }
+        }
+    })
+
+
     //datepicker
     $('.js-datepicker').datepicker({
         dateFormat: 'dd.mm.yy',
