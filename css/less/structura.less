@@ -76,6 +76,7 @@ html, body {
 }
 .header {
     background: var(--clr-bg);
+    z-index: 99;
 }
 .header-top-panel {
     background: var(--clr-base);
@@ -432,7 +433,8 @@ html, body {
     }
     .header-main-panel {
         .container {
-            padding-bottom: 20px;
+            padding-top: 0;
+            padding-bottom: 0;
         }
         .search-wrap {
             margin-right: -10px;
@@ -464,66 +466,136 @@ html, body {
             font-size: 16px;
             line-height: 20px;
             font-weight: 400;
-            flex-wrap: wrap;
-            position: relative;
+            flex-wrap: nowrap;
+            position: static;
             ul {
                 display: none;
                 animation: fadein ease 0.2s;
                 position: absolute;
                 top: 100%;
-                left: 50%;
+                left: 0;
+                right: 0;
+                padding: 20px 0px 45px 0px;
                 z-index: 20;
-                background: var(--clr-base);
-                width: 340px;
-                padding: 15px 0;
-                margin-left: -170px;
+                background: #EEF2FA;
+                width: auto;
+                margin: 0;
+                columns: 3;
+                column-gap: 80px;
+                li {
+                    page-break-inside: avoid;
+                    break-inside: avoid-column;
+                }
+                &:before, &:after {
+                	content: "";
+                	display: block;
+                	width: 9999px;
+                	position: absolute;
+                	top: 0;bottom: 0;left: 100%;
+                	background: #EEF2FA;
+                }
+                &:before {
+                	left: auto;right: 100%;
+                }
                 a {
                     display: block;
-                    color: #fff;
-                    padding: 10px 14px;
+                    color: #3D424D;
+                    padding: 5px 10px;
                     font-size: 13px;
                     line-height: 16px;
                     &:hover, &.active {
-                        background: #3D424D+#222;
+                        color: #387BB6;
                     }
                 }
             }
             &>li {
-                position: relative;
-                &:hover {
-                    &>ul {
-                        display: block;
-                    }
+                position: static;
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    left: 10px;
+                    right: 10px;
+                    height: 2px;
+                    background: #DEE4EF;
+                    z-index: 21;
+                    display: none;
+                    animation: fadein ease 0.2s;
                 }
                 &>a {
-                    display: block;
+                    display: flex;
+                    align-items: center;
+                    line-height: 1.1;
                     position: relative;
                     padding: 10px 14px;
                     color: var(--clr-base);
+                    height: 107px;
                     &:hover, &.active {
-                        color: #000;
+                        color: var(--clr-att);
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                    &:before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        bottom: 0;
+                        left: 14px;
+                        width: 50px;
+                        height: 5px;
+                        background: var(--clr-att);
+                        opacity: 0;
+                        transition: opacity ease 0.2s;
                     }
                 }
                 &:hover {
                     &>a {
-                        color: #000;
+                        color: var(--clr-att);
+                        &:before {
+                            opacity: 1;
+                        }
                     }
                 }
             }
             &>.submenu {
-                &>a {
-                    padding-right: 34px;
+                &:hover {
+                    &>ul {
+                        display: block;
+                    }
                     &:before {
+                        display: block;
+                    }
+                }
+                &>a {
+                    &:after {
                         content: "";
                         display: block;
                         width: 16px;
                         height: 16px;
-                        position: absolute;
-                        top: 50%;
-                        margin-top: -8px;
-                        right: 14px;
-                        background: url(../img/icons/arrow-menu.svg) center no-repeat;
+                        //position: absolute;
+                        //top: 50%;
+                        //margin-top: -8px;
+                        //right: 14px;
+                        position: relative;
+                        margin-left: 5px;
+                        background: url(../img/icons/arrow-menu-att.svg) center no-repeat;
                         background-size: 16px auto;
+                        filter: brightness(0) invert(0);
+                        transition: all ease 0.2s;
+                    }
+                    &:hover {
+                        &:after {
+                            filter: none;
+                        }
+                    }
+                }
+                &:hover {
+                    &>a {
+                        &:after {
+                            filter: none;
+                        }
                     }
                 }
             }
@@ -626,6 +698,9 @@ html, body {
         }
         .menu {
             font-size: 13px;
+            ul {
+                column-gap: 20px;
+            }
             &>li {
                 &>a {
                     padding-left: 8px;
@@ -633,7 +708,6 @@ html, body {
                 }
                 &.submenu {
                     &>a {
-                        padding-right: 24px;
                         &:before {
                             right: 8px;
                         }
@@ -681,6 +755,10 @@ html, body {
             max-width: 935px;
             margin-left: auto;
             margin-right: auto;
+            justify-content: flex-start;
+            &>li {
+                flex: inherit;
+            }
         }
         .menu-block {
             padding-left: 32px;
